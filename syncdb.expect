@@ -1,0 +1,18 @@
+#!/usr/bin/expect
+set user "admin"
+set pass "$env(ADMIN_PASS)"
+
+spawn python src/web/cvapp/manage.py syncdb
+
+expect "Would you like to create one now? (yes/no): "
+send "yes\r"
+expect "Username *:"
+send "$user\r"
+expect "Email address: "
+send "\r"
+expect "Password*"
+send "$pass\r"
+expect "Password*"
+send "$pass\r"
+expect "Superuser created successfully.*"
+send "\r"
