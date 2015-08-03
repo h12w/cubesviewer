@@ -36,12 +36,12 @@ DATABASES = {
 # to be accessible to clients of the application.
 CUBESVIEWER_CUBES_URL=os.environ.get('CUBES_HOST')
 if CUBESVIEWER_CUBES_URL == None:
-    CUBESVIEWER_CUBES_URL = "http://docker:5000"
+    CUBESVIEWER_CUBES_URL = "http://localhost:5000"
 
 # CubesViewer Store backend URL. It should point to this application.
 CUBESVIEWER_BACKEND_URL=os.environ.get('CUBES_VIEWER_HOST')
 if CUBESVIEWER_BACKEND_URL == None:
-    CUBESVIEWER_BACKEND_URL = "http://docker:8000/cubesviewer"
+    CUBESVIEWER_BACKEND_URL = "http://localhost:8000/cubesviewer"
 
 # Optional user and password tuple to access the backend, or False
 # (only meaningful when CubesViewer Cubes proxy is used)
